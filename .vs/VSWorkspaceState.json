@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\PostService"
+    "\\PostService",
+    "\\PostService\\Controllers",
+    "\\UserService",
+    "\\UserService\\Controllers"
   ],
+  "SelectedNode": "\\PostService\\Controllers",
   "PreviewInSolutionExplorer": false
 }
