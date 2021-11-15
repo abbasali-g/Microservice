@@ -7,6 +7,7 @@ using PostService.Entities;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -16,13 +17,14 @@ namespace PostService
     {
         public static void Main(string[] args)
         {
-            ListenForIntegrationEvents();
-
+            // ListenForIntegrationEvents();
+                       
             CreateHostBuilder(args).Build().Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

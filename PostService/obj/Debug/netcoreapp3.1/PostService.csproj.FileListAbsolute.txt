@@ -124,3 +124,16 @@ C:\Microservice\PostService\obj\Debug\netcoreapp3.1\PostService.csproj.CopyCompl
 C:\Microservice\PostService\obj\Debug\netcoreapp3.1\PostService.dll
 C:\Microservice\PostService\obj\Debug\netcoreapp3.1\PostService.pdb
 C:\Microservice\PostService\obj\Debug\netcoreapp3.1\PostService.genruntimeconfig.cache
+H:\microservice\Microservice\PostService\bin\Debug\netcoreapp3.1\PostService.deps.json
+H:\microservice\Microservice\PostService\bin\Debug\netcoreapp3.1\PostService.runtimeconfig.json
+H:\microservice\Microservice\PostService\bin\Debug\netcoreapp3.1\PostService.runtimeconfig.dev.json
+H:\microservice\Microservice\PostService\bin\Debug\netcoreapp3.1\PostService.dll
+H:\microservice\Microservice\PostService\bin\Debug\netcoreapp3.1\PostService.pdb
+H:\microservice\Microservice\PostService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+H:\microservice\Microservice\PostService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+H:\microservice\Microservice\PostService\obj\Debug\netcoreapp3.1\PostService.csproj.CoreCompileInputs.cache
+H:\microservice\Microservice\PostService\obj\Debug\netcoreapp3.1\PostService.MvcApplicationPartsAssemblyInfo.cs
+H:\microservice\Microservice\PostService\obj\Debug\netcoreapp3.1\PostService.MvcApplicationPartsAssemblyInfo.cache
+H:\microservice\Microservice\PostService\obj\Debug\netcoreapp3.1\PostService.dll
+H:\microservice\Microservice\PostService\obj\Debug\netcoreapp3.1\PostService.pdb
+H:\microservice\Microservice\PostService\obj\Debug\netcoreapp3.1\PostService.genruntimeconfig.cache

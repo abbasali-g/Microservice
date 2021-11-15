@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\microservice\\PostService\\PostService.csproj": {}
+    "H:\\microservice\\Microservice\\PostService\\PostService.csproj": {}
   },
   "projects": {
-    "C:\\microservice\\PostService\\PostService.csproj": {
+    "H:\\microservice\\Microservice\\PostService\\PostService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\microservice\\PostService\\PostService.csproj",
+        "projectUniqueName": "H:\\microservice\\Microservice\\PostService\\PostService.csproj",
         "projectName": "PostService",
-        "projectPath": "C:\\microservice\\PostService\\PostService.csproj",
-        "packagesPath": "C:\\Users\\Jabbari\\.nuget\\packages\\",
-        "outputPath": "C:\\microservice\\PostService\\obj\\",
+        "projectPath": "H:\\microservice\\Microservice\\PostService\\PostService.csproj",
+        "packagesPath": "C:\\Users\\sahand\\.nuget\\packages\\",
+        "outputPath": "H:\\microservice\\Microservice\\PostService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Jabbari\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sahand\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,7 +29,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -41,7 +40,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
@@ -76,12 +74,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.1.18, 3.1.18]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -90,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
