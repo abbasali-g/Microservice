@@ -24,7 +24,6 @@ H:\microservice\Microservice\UserService\bin\Debug\netcoreapp3.1\Microsoft.Exten
 H:\microservice\Microservice\UserService\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 H:\microservice\Microservice\UserService\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 H:\microservice\Microservice\UserService\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
-H:\microservice\Microservice\UserService\obj\Debug\netcoreapp3.1\UserService.csprojAssemblyReference.cache
 H:\microservice\Microservice\UserService\obj\Debug\netcoreapp3.1\UserService.csproj.CopyComplete
 H:\microservice\Microservice\UserService\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
 H:\microservice\Microservice\UserService\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll

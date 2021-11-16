@@ -17,7 +17,7 @@ namespace PostService
     {
         public static void Main(string[] args)
         {
-            // ListenForIntegrationEvents();
+            ListenForIntegrationEvents();
                        
             CreateHostBuilder(args).Build().Run();
         }
