@@ -33,12 +33,11 @@ namespace UserService
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "UserService", Version = "v1" });
             });
 
-            services.AddDbContext<UserServiceContext>(options =>
-                 options.UseSqlite(@"Data Source=user.db"));
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserServiceContext dbContext)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseSwagger();
             app.UseSwaggerUI(c =>
@@ -48,7 +47,7 @@ namespace UserService
             );
             if (env.IsDevelopment())
             {
-                dbContext.Database.EnsureCreated();
+                
                 app.UseDeveloperExceptionPage();
             }
 

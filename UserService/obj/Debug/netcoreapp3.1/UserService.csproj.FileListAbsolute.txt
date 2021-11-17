@@ -63,9 +63,6 @@ H:\microservice\Microservice\UserService\bin\Debug\netcoreapp3.1\Microsoft.OpenA
 H:\microservice\Microservice\UserService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 H:\microservice\Microservice\UserService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 H:\microservice\Microservice\UserService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
-H:\microservice\Microservice\UserService\obj\Debug\netcoreapp3.1\UserService.csproj.CoreCompileInputs.cache
-H:\microservice\Microservice\UserService\obj\Debug\netcoreapp3.1\UserService.MvcApplicationPartsAssemblyInfo.cs
-H:\microservice\Microservice\UserService\obj\Debug\netcoreapp3.1\UserService.MvcApplicationPartsAssemblyInfo.cache
 C:\Microservice\UserService\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Microservice\UserService\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Microservice\UserService\bin\Debug\netcoreapp3.1\UserService.exe
@@ -136,3 +133,13 @@ C:\Microservice\UserService\obj\Debug\netcoreapp3.1\UserService.csproj.CopyCompl
 C:\Microservice\UserService\obj\Debug\netcoreapp3.1\UserService.dll
 C:\Microservice\UserService\obj\Debug\netcoreapp3.1\UserService.pdb
 C:\Microservice\UserService\obj\Debug\netcoreapp3.1\UserService.genruntimeconfig.cache
+H:\microservice\Microservice\UserService\obj\Debug\netcoreapp3.1\UserService.csprojAssemblyReference.cache
+H:\microservice\Microservice\UserService\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+H:\microservice\Microservice\UserService\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+H:\microservice\Microservice\UserService\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+H:\microservice\Microservice\UserService\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+H:\microservice\Microservice\UserService\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+H:\microservice\Microservice\UserService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+H:\microservice\Microservice\UserService\obj\Debug\netcoreapp3.1\UserService.csproj.CoreCompileInputs.cache
+H:\microservice\Microservice\UserService\obj\Debug\netcoreapp3.1\UserService.MvcApplicationPartsAssemblyInfo.cs
+H:\microservice\Microservice\UserService\obj\Debug\netcoreapp3.1\UserService.MvcApplicationPartsAssemblyInfo.cache

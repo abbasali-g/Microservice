@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using PostService.Data;
+using System.Data.SqlClient;
+using System.Data;
 using PostService.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace PostService.Controllers
 {
@@ -11,26 +13,41 @@ namespace PostService.Controllers
     [ApiController]
     public class PostController : ControllerBase
     {
-        private readonly PostServiceContext _context;
 
-        public PostController(PostServiceContext context)
-        {
-            _context = context;
-        }
-
+        
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Post>>> GetPost()
+        public async Task<string> GetPost()
         {
-            return await _context.Post.Include(x => x.User).ToListAsync();
+            Data.DBHelper db = new Data.DBHelper();
+            return await db.execSql("select * from MicPost_Post for json path");
+
         }
 
         [HttpPost]
-        public async Task<ActionResult<Post>> PostPost(Post post)
+        public async Task<string> PostPost(Post post)
         {
-            _context.Post.Add(post);
-            await _context.SaveChangesAsync();
+            Data.DBHelper db = new Data.DBHelper();
+            string query = "INSERT INTO MicPost_Post(PostId,PostTitle,PostContent,PostUserID)";
+                    query+=" VALUES("+post.PostId+ ",'" + post.PostTitle + "','" + post.PostContent + "' ," + post.User.ID + ")";
+            await db.execSql(query);
+            return "{'post':'" + post.PostId + "' }";
+        }
 
-            return CreatedAtAction("GetPost", new { id = post.PostId }, post);
+        public async Task<string> addUser(string userID, string userName)
+        {
+            Data.DBHelper db = new Data.DBHelper();
+            string query = "INSERT INTO [MicPost_User] ([ID],[Name]) VALUES ("+userID+",'"+userName+"')";
+            
+            await db.execSql(query);
+            return "{'post_AddUser':'" + userID + "' }";
+        }
+        public async Task<string> updateUser(string userID, string userName)
+        {
+            Data.DBHelper db = new Data.DBHelper();
+            string query = "udpate [MicPost_User] set [Name] ='"+userName+"' where ID=" + userID + "";
+
+            await db.execSql(query);
+            return "{'post_UpdateUser':'" + userID + "' }";
         }
     }
 }

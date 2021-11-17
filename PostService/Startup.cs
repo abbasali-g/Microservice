@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using PostService.Data;
+
 
 namespace PostService
 {
@@ -33,12 +33,12 @@ namespace PostService
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PostService", Version = "v1" });
             });
 
-            services.AddDbContext<PostServiceContext>(options =>
-                 options.UseSqlite(@"Data Source=post.db"));
+            //services.AddDbContext<PostServiceContext>(options =>
+            //     options.UseSqlite(@"Data Source=post.db"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, PostServiceContext dbContext)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
            
             app.UseSwagger();
@@ -49,7 +49,7 @@ namespace PostService
             );
             if (env.IsDevelopment())
             {
-                dbContext.Database.EnsureCreated();
+                
                 app.UseDeveloperExceptionPage();
             }
 

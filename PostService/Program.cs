@@ -32,6 +32,9 @@ namespace PostService
 
         private static void ListenForIntegrationEvents()
         {
+            Data.DBHelper db = new DBHelper();
+
+
             var factory = new ConnectionFactory();
             var connection = factory.CreateConnection();
             var channel = connection.CreateModel();
@@ -39,31 +42,25 @@ namespace PostService
 
             consumer.Received += (model, ea) =>
             {
-                var contextOptions = new DbContextOptionsBuilder<PostServiceContext>()
-                    .UseSqlite(@"Data Source=post.db")
-                    .Options;
-                var dbContext = new PostServiceContext(contextOptions);                
                 
                 var body = ea.Body.ToArray();
                 var message = Encoding.UTF8.GetString(body);
-                Console.WriteLine(" [x] Received {0}", message);
+                db.writeToLog("ListenForIntegrationEvents",message).Wait();
+                //Console.WriteLine(" [x] Received {0}", message);
 
                 var data = JObject.Parse(message);
                 var type = ea.RoutingKey;
                 if (type == "user.add")
                 {
-                    dbContext.User.Add(new User()
-                    {
-                        ID = data["id"].Value<int>(),
-                        Name = data["name"].Value<string>()
-                    });
-                    dbContext.SaveChanges();
+                    PostService.Controllers.PostController p = new Controllers.PostController();
+                    p.addUser(data["id"].Value<int>().ToString(), data["name"].Value<string>()).Wait();
+                    db.writeToLog("user.add", data["name"].Value<string>()).Wait();
                 }
                 else if (type == "user.update")
                 {
-                    var user = dbContext.User.First(a => a.ID == data["id"].Value<int>());
-                    user.Name = data["newname"].Value<string>();
-                    dbContext.SaveChanges();
+                    PostService.Controllers.PostController p = new Controllers.PostController();
+                    p.updateUser(data["id"].Value<int>().ToString(), data["name"].Value<string>()).Wait();
+                    db.writeToLog("user.update", data["name"].Value<string>()).Wait();
                 }
             };
             channel.BasicConsume(queue: "user.postservice",

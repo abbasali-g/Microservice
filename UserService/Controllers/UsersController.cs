@@ -14,21 +14,23 @@ namespace UserService.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly UserServiceContext _context;
-
-        public UsersController(UserServiceContext context)
+        
+        public UsersController( )
         {
-            _context = context;
+             
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> GetUser()
+        public async Task<string> GetUser()
         {
-            return await _context.User.ToListAsync();
+            Data.DBHelper db = new DBHelper();
+            return await db.execSql("select * from MicUser_User for json path");
         }
 
         private void PublishToMessageQueue(string integrationEvent, string eventData)
         {
+            Data.DBHelper db = new DBHelper();
+            db.writeToLog(integrationEvent, eventData).Wait();
             // TOOO: Reuse and close connections and channel, etc, 
             var factory = new ConnectionFactory();
             var connection = factory.CreateConnection();
@@ -40,12 +42,12 @@ namespace UserService.Controllers
                                              body: body);
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutUser(int id, User user)
+        [HttpPut]
+        public async Task<string> PutUser(User user)
         {
-            _context.Entry(user).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
-
+            string query = "UPDATE  MicUser_User SET [Name] = '"+user.Name+ "' ,[Mail] = '" + user.Mail + "'  ,[OtherData] = '" + user.OtherData+ "' WHERE ID=" + user.ID+ "";
+            Data.DBHelper db = new DBHelper();
+            await db.execSql(query);
             var integrationEventData = JsonConvert.SerializeObject(new
             {
                 id = user.ID,
@@ -54,16 +56,17 @@ namespace UserService.Controllers
             PublishToMessageQueue("user.update", integrationEventData);
 
 
-            return NoContent();
+            return "{'user':'" + user.ID + "' }";
         }
 
         [HttpPost]
-        public async Task<ActionResult<User>> PostUser(User user)
+        public async Task<string> PostUser(User user)
         {
-            _context.User.Add(user);
-            await _context.SaveChangesAsync();
+            string query = "INSERT INTO MicUser_User ([ID],[Name],[Mail],[OtherData])  VALUES("+user.ID+ ",'" + user.Name + "','" + user.Mail + "','" + user.OtherData + "')";
+            Data.DBHelper db = new DBHelper();
+            await db.execSql(query);
 
-             var integrationEventData = JsonConvert.SerializeObject(new
+            var integrationEventData = JsonConvert.SerializeObject(new
             {
                 id = user.ID,
                 name = user.Name
@@ -71,7 +74,7 @@ namespace UserService.Controllers
             PublishToMessageQueue("user.add", integrationEventData);
 
 
-            return CreatedAtAction("GetUser", new { id = user.ID }, user);
+            return "{'user':'"+user.ID+"' }";
         }
     }
 }
