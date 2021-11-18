@@ -33,39 +33,47 @@ namespace PostService
         private static void ListenForIntegrationEvents()
         {
             Data.DBHelper db = new DBHelper();
-
-
-            var factory = new ConnectionFactory();
-            var connection = factory.CreateConnection();
-            var channel = connection.CreateModel();
-            var consumer = new EventingBasicConsumer(channel);
-
-            consumer.Received += (model, ea) =>
+            try
             {
                 
-                var body = ea.Body.ToArray();
-                var message = Encoding.UTF8.GetString(body);
-                db.writeToLog("ListenForIntegrationEvents",message).Wait();
-                //Console.WriteLine(" [x] Received {0}", message);
 
-                var data = JObject.Parse(message);
-                var type = ea.RoutingKey;
-                if (type == "user.add")
+
+                var factory = new ConnectionFactory() { HostName = "localhost", UserName = "guest", Password = "guest", Port = 5672 }; ;
+                var connection = factory.CreateConnection();
+                var channel = connection.CreateModel();
+                var consumer = new EventingBasicConsumer(channel);
+
+                consumer.Received += (model, ea) =>
                 {
-                    PostService.Controllers.PostController p = new Controllers.PostController();
-                    p.addUser(data["id"].Value<int>().ToString(), data["name"].Value<string>()).Wait();
-                    db.writeToLog("user.add", data["name"].Value<string>()).Wait();
-                }
-                else if (type == "user.update")
-                {
-                    PostService.Controllers.PostController p = new Controllers.PostController();
-                    p.updateUser(data["id"].Value<int>().ToString(), data["name"].Value<string>()).Wait();
-                    db.writeToLog("user.update", data["name"].Value<string>()).Wait();
-                }
-            };
-            channel.BasicConsume(queue: "user.postservice",
-                                     autoAck: true,
-                                     consumer: consumer);
+
+                    var body = ea.Body.ToArray();
+                    var message = Encoding.UTF8.GetString(body);
+                    db.writeToLog("ListenForIntegrationEvents:", message).Wait();
+                    //Console.WriteLine(" [x] Received {0}", message);
+
+                    
+                    var data = JObject.Parse(message);
+                    var type = ea.RoutingKey;
+                    if (type == "user.add")
+                    {
+                        PostDBHelper pa = new PostDBHelper();
+                        pa.addUser(data["id"].Value<int>().ToString(), data["name"].Value<string>()).Wait();
+                        db.writeToLog("user.add", data["name"].Value<string>()).Wait();
+                    }
+                    else if (type == "user.update")
+                    {
+                        PostDBHelper pu = new PostDBHelper();
+                        db.writeToLog("user.update:::"+ data["id"].Value<int>().ToString(), data["name"].Value<string>()).Wait();
+                        pu.updateUser(data["id"].Value<int>().ToString(), data["name"].Value<string>()).Wait();
+                        db.writeToLog("after user.update", "").Wait();
+                    }
+                };
+                channel.BasicConsume(queue: "user.postservice",
+                                         autoAck: true,
+                                         consumer: consumer);
+            }
+            catch (Exception ex)
+            { db.writeToLog("receive",ex.Message).Wait(); }
         }
     }
 }

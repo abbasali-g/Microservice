@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PostService", "PostService\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserService", "UserService\UserService.csproj", "{1F3242AF-E41A-4D45-AE8A-2A68D4A0C5FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserOnline", "UserOnline\UserOnline.csproj", "{B44C6477-1C48-45E3-9CC9-DBB98D33E452}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserOnline", "UserOnline\UserOnline.csproj", "{B44C6477-1C48-45E3-9CC9-DBB98D33E452}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1923,23 +1923,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sahand\\.nuget\\packages\\": {},
+    "C:\\Users\\Jabbari\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\microservice\\Microservice\\PostService\\PostService.csproj",
+      "projectUniqueName": "C:\\microservice_git\\PostService\\PostService.csproj",
       "projectName": "PostService",
-      "projectPath": "H:\\microservice\\Microservice\\PostService\\PostService.csproj",
-      "packagesPath": "C:\\Users\\sahand\\.nuget\\packages\\",
-      "outputPath": "H:\\microservice\\Microservice\\PostService\\obj\\",
+      "projectPath": "C:\\microservice_git\\PostService\\PostService.csproj",
+      "packagesPath": "C:\\Users\\Jabbari\\.nuget\\packages\\",
+      "outputPath": "C:\\microservice_git\\PostService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\sahand\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jabbari\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1951,6 +1951,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -1962,6 +1963,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Sqlite": {
             "target": "Package",
@@ -2008,7 +2010,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

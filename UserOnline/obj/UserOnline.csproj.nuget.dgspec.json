@@ -1,34 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "H:\\microservice\\Microservice\\UserOnline\\UserOnline.csproj": {}
+    "C:\\microservice_git\\UserOnline\\UserOnline.csproj": {}
   },
   "projects": {
-    "H:\\microservice\\Microservice\\UserOnline\\UserOnline.csproj": {
+    "C:\\microservice_git\\UserOnline\\UserOnline.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\microservice\\Microservice\\UserOnline\\UserOnline.csproj",
+        "projectUniqueName": "C:\\microservice_git\\UserOnline\\UserOnline.csproj",
         "projectName": "UserOnline",
-        "projectPath": "H:\\microservice\\Microservice\\UserOnline\\UserOnline.csproj",
-        "packagesPath": "C:\\Users\\sahand\\.nuget\\packages\\",
-        "outputPath": "H:\\microservice\\Microservice\\UserOnline\\obj\\",
+        "projectPath": "C:\\microservice_git\\UserOnline\\UserOnline.csproj",
+        "packagesPath": "C:\\Users\\Jabbari\\.nuget\\packages\\",
+        "outputPath": "C:\\microservice_git\\UserOnline\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\sahand\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jabbari\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -39,7 +40,14 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Ocelot": {
+              "target": "Package",
+              "version": "[17.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -58,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

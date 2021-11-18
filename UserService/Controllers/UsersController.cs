@@ -32,7 +32,7 @@ namespace UserService.Controllers
             Data.DBHelper db = new DBHelper();
             db.writeToLog(integrationEvent, eventData).Wait();
             // TOOO: Reuse and close connections and channel, etc, 
-            var factory = new ConnectionFactory();
+            var factory = new ConnectionFactory() { HostName = "localhost", UserName = "guest", Password = "guest", Port = 5672 }; 
             var connection = factory.CreateConnection();
             var channel = connection.CreateModel();
             var body = Encoding.UTF8.GetBytes(eventData);
@@ -42,7 +42,7 @@ namespace UserService.Controllers
                                              body: body);
         }
 
-        [HttpPut]
+        [HttpPost("PutUser")]
         public async Task<string> PutUser(User user)
         {
             string query = "UPDATE  MicUser_User SET [Name] = '"+user.Name+ "' ,[Mail] = '" + user.Mail + "'  ,[OtherData] = '" + user.OtherData+ "' WHERE ID=" + user.ID+ "";
@@ -51,7 +51,7 @@ namespace UserService.Controllers
             var integrationEventData = JsonConvert.SerializeObject(new
             {
                 id = user.ID,
-                newname = user.Name
+                name = user.Name
             });
             PublishToMessageQueue("user.update", integrationEventData);
 
@@ -59,7 +59,7 @@ namespace UserService.Controllers
             return "{'user':'" + user.ID + "' }";
         }
 
-        [HttpPost]
+        [HttpPost("PostUser")]
         public async Task<string> PostUser(User user)
         {
             string query = "INSERT INTO MicUser_User ([ID],[Name],[Mail],[OtherData])  VALUES("+user.ID+ ",'" + user.Name + "','" + user.Mail + "','" + user.OtherData + "')";

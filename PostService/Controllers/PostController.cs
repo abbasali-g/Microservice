@@ -19,7 +19,7 @@ namespace PostService.Controllers
         public async Task<string> GetPost()
         {
             Data.DBHelper db = new Data.DBHelper();
-            return await db.execSql("select * from MicPost_Post for json path");
+            return await db.execSql("select MicPost_Post.*,micpost_user.Name from MicPost_Post inner join micpost_user on micpost_user.ID = MicPost_Post.PostUserID  for json path");
 
         }
 
@@ -33,21 +33,14 @@ namespace PostService.Controllers
             return "{'post':'" + post.PostId + "' }";
         }
 
-        public async Task<string> addUser(string userID, string userName)
+        [HttpPut]
+        public async Task<string> PutPost(User user)
         {
-            Data.DBHelper db = new Data.DBHelper();
-            string query = "INSERT INTO [MicPost_User] ([ID],[Name]) VALUES ("+userID+",'"+userName+"')";
-            
-            await db.execSql(query);
-            return "{'post_AddUser':'" + userID + "' }";
+            Data.PostDBHelper db = new Data.PostDBHelper();
+            await db.updateUser(user.ID.ToString(),user.Name);
+            return "{'postuser':'" + user.ID.ToString() + "' }";
         }
-        public async Task<string> updateUser(string userID, string userName)
-        {
-            Data.DBHelper db = new Data.DBHelper();
-            string query = "udpate [MicPost_User] set [Name] ='"+userName+"' where ID=" + userID + "";
 
-            await db.execSql(query);
-            return "{'post_UpdateUser':'" + userID + "' }";
-        }
+
     }
 }

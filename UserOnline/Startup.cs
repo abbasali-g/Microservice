@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Ocelot.DependencyInjection;
+using Ocelot.Middleware;
 
 namespace UserOnline
 {
@@ -23,6 +25,7 @@ namespace UserOnline
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddOcelot(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +43,7 @@ namespace UserOnline
 
             app.UseRouting();
 
+            app.UseOcelot();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
