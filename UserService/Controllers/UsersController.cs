@@ -21,6 +21,13 @@ namespace UserService.Controllers
         }
 
         [HttpGet]
+        public async Task<string> Users()
+        {
+            Data.DBHelper db = new DBHelper();
+            return await db.execSql("select * from MicUser_User for json path");
+        }
+
+        [HttpGet("GetUser")]
         public async Task<string> GetUser()
         {
             Data.DBHelper db = new DBHelper();

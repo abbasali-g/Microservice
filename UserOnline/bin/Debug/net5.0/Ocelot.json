@@ -2,24 +2,20 @@
   "Routes": [
     //Customer API
     {
-      "DownstreamPathTemplate":"/api/Users",
-      "DownstreamScheme":"http",
+      "DownstreamPathTemplate": "/api/Users/{}",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
           "Port": "8002"
         }
       ],
-      "UpstreamPathTemplate":"/api/Users",
-      "UpstreamHttpMethod":
-      [
-        "GET",
-        "POST",
-        "PUT",
-        "DELETE"
-
-      ]
+      "UpstreamPathTemplate": "/api/Users/{}",
+      "UpstreamHttpMethod": [ "GET","POST","PUT","DELETE"]
     }
-      
-   ]
+
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:53063"
+  }
 }

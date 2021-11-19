@@ -20,7 +20,11 @@ namespace UserOnline
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
                     webBuilder.UseStartup<Startup>();
-                });
+                    webBuilder.ConfigureAppConfiguration(config => config.AddJsonFile("Ocelot.json"));
+                })
+                .ConfigureLogging(logging=>logging.AddConsole());
+
     }
 }
