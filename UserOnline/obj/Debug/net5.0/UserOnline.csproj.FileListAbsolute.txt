@@ -18,7 +18,6 @@ C:\microservice_git\UserOnline\bin\Debug\net5.0\Microsoft.Extensions.DiagnosticA
 C:\microservice_git\UserOnline\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\microservice_git\UserOnline\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
 C:\microservice_git\UserOnline\bin\Debug\net5.0\Ocelot.dll
-C:\microservice_git\UserOnline\obj\Debug\net5.0\UserOnline.csprojAssemblyReference.cache
 C:\microservice_git\UserOnline\obj\Debug\net5.0\UserOnline.GeneratedMSBuildEditorConfig.editorconfig
 C:\microservice_git\UserOnline\obj\Debug\net5.0\UserOnline.AssemblyInfoInputs.cache
 C:\microservice_git\UserOnline\obj\Debug\net5.0\UserOnline.AssemblyInfo.cs

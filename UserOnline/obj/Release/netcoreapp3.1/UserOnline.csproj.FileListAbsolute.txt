@@ -35,3 +35,5 @@ H:\microservice\Microservice\UserOnline\obj\Release\netcoreapp3.1\UserOnline.dll
 H:\microservice\Microservice\UserOnline\obj\Release\netcoreapp3.1\UserOnline.pdb
 H:\microservice\Microservice\UserOnline\obj\Release\netcoreapp3.1\UserOnline.genruntimeconfig.cache
 H:\microservice\Microservice\UserOnline\obj\Release\netcoreapp3.1\UserOnline.csproj.CopyComplete
+C:\microservice_git\UserOnline\obj\Release\netcoreapp3.1\UserOnline.dll
+C:\microservice_git\UserOnline\obj\Release\netcoreapp3.1\UserOnline.pdb

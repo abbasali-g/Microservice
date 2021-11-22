@@ -4,6 +4,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_PublishTargetUrl>H:\microservice\Microservice\UserOnline\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\microservice_git\UserOnline\bin\Release\net5.0\publish\</_PublishTargetUrl>
+    <History>True|2021-11-22T16:51:48.6389381Z;</History>
   </PropertyGroup>
 </Project>

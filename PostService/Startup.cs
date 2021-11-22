@@ -41,6 +41,7 @@ namespace PostService
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
            
+            
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
@@ -54,7 +55,7 @@ namespace PostService
             }
 
             app.UseRouting();
-
+            
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

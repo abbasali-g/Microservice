@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Hh8znIODzGFa1VK9iofC2+DdHkBETjsewPnT40RNt54UW6oi58uIZxJdc/wPmHJMME6Yx3klPPb358pqPwntQQ==",
+  "dgSpecHash": "LD3DgUHMwGdiSWSI7xQAKIaTuycAjNrKy1lwrhnlY+EZo6umwgj0Z0PkmJqEF5/2dBL19aORi5PtDQEBRUuCyA==",
   "success": true,
   "projectFilePath": "C:\\microservice_git\\UserOnline\\UserOnline.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\Jabbari\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Jabbari\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Jabbari\\.nuget\\packages\\microsoft.extensions.diagnosticadapter\\3.1.10\\microsoft.extensions.diagnosticadapter.3.1.10.nupkg.sha512",
+    "C:\\Users\\Jabbari\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.11.1\\microsoft.visualstudio.azure.containers.tools.targets.1.11.1.nupkg.sha512",
     "C:\\Users\\Jabbari\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
     "C:\\Users\\Jabbari\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\Jabbari\\.nuget\\packages\\ocelot\\17.0.0\\ocelot.17.0.0.nupkg.sha512",
