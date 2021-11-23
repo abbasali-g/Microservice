@@ -15,7 +15,7 @@ namespace PostService.Controllers
     {
 
         
-        [HttpGet]
+        [HttpGet("GetPost")]
         public async Task<string> GetPost()
         {
             Data.DBHelper db = new Data.DBHelper();
@@ -23,7 +23,7 @@ namespace PostService.Controllers
 
         }
 
-        [HttpPost]
+        [HttpPost("PostPost")]
         public async Task<string> PostPost(Post post)
         {
             Data.DBHelper db = new Data.DBHelper();
@@ -33,7 +33,7 @@ namespace PostService.Controllers
             return "{'post':'" + post.PostId + "' }";
         }
 
-        [HttpPut]
+        [HttpPut("PutPost")]
         public async Task<string> PutPost(User user)
         {
             Data.PostDBHelper db = new Data.PostDBHelper();
