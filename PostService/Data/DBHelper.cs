@@ -8,9 +8,9 @@ namespace PostService.Data
     {
         public async Task<string> execSql(string query)
         {
-            string constr = @"Data Source=.;Initial Catalog=microservice;uid=sa;password=123";
+            string constr = @"Data Source=192.168.2.2;Initial Catalog=microservice;uid=sa;password=123";
             string rz = "{}";
-            using (SqlConnection con = new SqlConnection(constr))
+            using (SqlConnection con = new SqlConnection("Data Source=192.168.2.2;Initial Catalog=microservice;uid=sa;password=123"))
             {
 
                 using (SqlCommand cmd = new SqlCommand(query))

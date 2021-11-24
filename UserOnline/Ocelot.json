@@ -2,27 +2,27 @@
   "Routes": [
     //Customer API
     {
-      "DownstreamPathTemplate": "app/api/Users/{}",
+      "DownstreamPathTemplate": "/api/Users/{}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "rmax.user",
           "Port": "8001"
         }
       ],
-      "UpstreamPathTemplate": "app/api/Users/{}",
+      "UpstreamPathTemplate": "/api/Users/{}",
       "UpstreamHttpMethod": [ "GET","POST","PUT","DELETE"]
     },
     {
-      "DownstreamPathTemplate": "app/api/Post/{}",
+      "DownstreamPathTemplate": "/api/Post/{}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "rmax.post",
           "Port": "8002"
         }
       ],
-      "UpstreamPathTemplate": "app/api/Post/{}",
+      "UpstreamPathTemplate": "/api/Post/{}",
       "UpstreamHttpMethod": [ "GET","POST","PUT","DELETE"]
     }
 

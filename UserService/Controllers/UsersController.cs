@@ -39,7 +39,7 @@ namespace UserService.Controllers
             Data.DBHelper db = new DBHelper();
             db.writeToLog(integrationEvent, eventData).Wait();
             // TOOO: Reuse and close connections and channel, etc, 
-            var factory = new ConnectionFactory() { HostName = "localhost", UserName = "guest", Password = "guest", Port = 5672 }; 
+            var factory = new ConnectionFactory() { HostName = "rmax.rabbitmq", UserName = "guest", Password = "guest", Port = 5672 }; 
             var connection = factory.CreateConnection();
             var channel = connection.CreateModel();
             var body = Encoding.UTF8.GetBytes(eventData);

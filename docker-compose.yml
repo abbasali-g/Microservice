@@ -1,26 +1,58 @@
 # Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP .NET Core service.
 
-version: '3.4'
+version: '3.5'
 
 services:
-  userservice:
-    image: userservice
-    build:
-      context: .
-      dockerfile: UserService/Dockerfile
-    ports:
-      - 8001:8001
-  useronline:
-    image: useronline
-    build:
-      context: .
-      dockerfile: UserOnline/Dockerfile
-    ports:
-      - 8000:8000
+  # rabbitmq:
+  #   image: rabbitmq:3-management
+  #   container_name: rmax.rabbitmq
+  #   hostname: rmax.rabbitmq
+  #   ports:
+  #     - 15672:15672
+  #     - 5672:5672
+   
+  #   networks:
+  #     - rmax    
+
   postservice:
     image: postservice
+    container_name: rmax.post
+    hostname: rmax.post/connections
     build:
       context: .
       dockerfile: PostService/Dockerfile
     ports:
       - 8002:8002
+    networks:
+      - rmax
+
+  userservice:
+    image: userservice
+    container_name: rmax.user
+    hostname: rmax.user
+    build:
+      context: .
+      dockerfile: UserService/Dockerfile
+    ports:
+      - 8001:8001
+    networks:
+      - rmax
+        
+  useronline:
+    image: useronline
+    container_name: rmax.gateway
+    hostname: rmax.gateway
+    build:
+      context: .
+      dockerfile: UserOnline/Dockerfile
+    ports:
+      - 8000:8000
+    networks:
+      - rmax
+        
+  
+  
+networks:
+  rmax:
+    driver: bridge  
+    

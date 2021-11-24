@@ -17,8 +17,16 @@ namespace PostService
     {
         public static void Main(string[] args)
         {
-            ListenForIntegrationEvents();
-                       
+            Data.DBHelper db = new DBHelper();
+            try
+            {
+                ListenForIntegrationEvents();
+            }catch(Exception ex)
+            {
+                db.writeToLog("main start Exception:", ex.Message).Wait();          
+            }
+
+            
             CreateHostBuilder(args).Build().Run();
         }
 
@@ -33,12 +41,13 @@ namespace PostService
         private static void ListenForIntegrationEvents()
         {
             Data.DBHelper db = new DBHelper();
+            db.writeToLog("ListenForIntegrationEvents start position","").Wait();
             try
             {
                 
 
 
-                var factory = new ConnectionFactory() { HostName = "localhost", UserName = "guest", Password = "guest", Port = 5672 }; ;
+                var factory = new ConnectionFactory() { HostName = "rmax.rabbitmq", UserName = "guest", Password = "guest", Port = 5672 };
                 var connection = factory.CreateConnection();
                 var channel = connection.CreateModel();
                 var consumer = new EventingBasicConsumer(channel);
@@ -73,7 +82,7 @@ namespace PostService
                                          consumer: consumer);
             }
             catch (Exception ex)
-            { db.writeToLog("receive",ex.Message).Wait(); }
+            { db.writeToLog("receive Error",ex.Message).Wait(); }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using System;
+using System.Data.SqlClient;
 
 using System.Threading.Tasks;
 
@@ -8,9 +9,12 @@ namespace UserService.Data
     {
         public async Task<string> execSql(string query)
         {
-            string constr = @"Data Source=.;Initial Catalog=microservice;uid=sa;password=123";
+            string constr = @"Data Source=192.168.2.2;Initial Catalog=microservice;uid=sa;password=123";
             string rz = "{}";
-            using (SqlConnection con = new SqlConnection(constr))
+           
+           try
+           {
+                using (SqlConnection con = new SqlConnection("Data Source=192.168.2.2;Initial Catalog=microservice;uid=sa;password=123"))
             {
 
                 using (SqlCommand cmd = new SqlCommand(query))
@@ -28,6 +32,10 @@ namespace UserService.Data
                     con.Close();
                 }
             }
+           }catch(Exception ex)
+           {
+               rz = ex.Message;
+           }
             return rz;
         }
         
